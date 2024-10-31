@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spooky Halloween</title>
+  <style>
+    /* Background color animation */
+    body {
+      background-color: black;
+      animation: spookyBackground 3s infinite;
+      color: orange;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    /* Background animation keyframes */
+    @keyframes spookyBackground {
+      0% { background-color: black; }
+      33% { background-color: #2a0038; }  /* Dark purple */
+      66% { background-color: #451100; }  /* Dark orange */
+      100% { background-color: black; }
+    }
+
+    /* Main Halloween greeting styling */
+    h1 {
+      font-size: 4em;
+      font-weight: bold;
+      color: orange;
+      text-shadow: 5px 5px 10px #ff0000, -5px -5px 10px #000000;
+      animation: flicker 1.5s infinite alternate;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    /* "Do Not Cross" text styling */
+    .warning {
+      font-size: 1.5em;
+      color: red;
+      text-shadow: 3px 3px 6px #000000;
+      animation: pulse 1s infinite alternate;
+      position: relative;
+      z-index: 1;
+      margin-top: -10px;
+    }
+
+    /* Flicker effect for main greeting */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Pulse effect for warning text */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+
+    /* Rain animation */
+    .rain {
+      position: absolute;
+      top: -100px;
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      opacity: 0.8;
+      animation: rainFall linear infinite;
+    }
+
+    /* Keyframes for falling effect */
+    @keyframes rainFall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+    /* Skull, pumpkin, and bat images */
+    .skull { background-image: url('https://img.icons8.com/ios-filled/50/ffffff/skull.png'); }
+    .pumpkin { background-image: url('https://img.icons8.com/ios-filled/50/ff7518/pumpkin.png'); }
+    .bat { background-image: url('https://img.icons8.com/ios-filled/50/ffffff/bat.png'); }
+
+    /* Different speeds and sizes for rain items */
+    .rain:nth-child(1) { left: 5%; animation-duration: 5s; }
+    .rain:nth-child(2) { left: 20%; animation-duration: 7s; }
+    .rain:nth-child(3) { left: 35%; animation-duration: 6s; }
+    .rain:nth-child(4) { left: 50%; animation-duration: 8s; }
+    .rain:nth-child(5) { left: 65%; animation-duration: 6s; }
+    .rain:nth-child(6) { left: 80%; animation-duration: 7s; }
+    .rain:nth-child(7) { left: 95%; animation-duration: 5s; }
+  </style>
+</head>
+<body>
+
+  <!-- Main Halloween greeting -->
+  <h1>Happy Halloween</h1>
+  <div class="warning">DO NOT CROSS</div>
+
+  <!-- Rain elements: skulls, pumpkins, and bats -->
+  <div class="rain skull"></div>
+  <div class="rain pumpkin"></div>
+  <div class="rain bat"></div>
+  <div class="rain skull"></div>
+  <div class="rain pumpkin"></div>
+  <div class="rain bat"></div>
+  <div class="rain skull"></div>
+
+</body>
+</html>
